@@ -9,7 +9,7 @@
     </asp:ScriptManagerProxy>
     <script type="text/javascript">
         $(function () {
-            
+            alert('teste');
         });
     </script>
     <h2>Cadastrar Cidades</h2>
