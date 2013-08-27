@@ -104,10 +104,14 @@
     <Content Include="Usuarios\Adicionar.aspx" />
     <Content Include="Usuarios\Default.aspx" />
     <Content Include="Usuarios\Detalhes.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Scripts\jquery-2.0.2.min.map" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BootstrapFormView.cs" />
@@ -342,12 +346,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Layout.Master" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Financeiro\Receber\" />

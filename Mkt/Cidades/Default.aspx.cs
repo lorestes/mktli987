@@ -21,5 +21,10 @@ namespace Mkt.Cidades
             sqlCidade.FilterParameters.Add("query", txtProcurar.Text);
             lvwCidades.DataBind();
         }
+
+        protected void lvwCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

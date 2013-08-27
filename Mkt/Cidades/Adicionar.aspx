@@ -20,9 +20,9 @@
         <InsertItemTemplate>
             <div class="form form-horizontal">
                <div class="control-group">
-                    <label class="control-label">Nome da Cidade</label>
+                    <label class="control-label">Nome da Cidade</label> 
                     <div class="controls">
-                        <asp:TextBox ID="nom_cidadeTextBox" runat="server" Text='<%# Bind("nom_cidade") %>' />
+                        <asp:TextBox ID="nom_cidadeTextBox" runat="server" Text='<%# Bind("nom_cidade") %>' /> <span class="label label-important">Obrigatório</span>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="nom_cidadeTextBox" runat="server" ErrorMessage="Nome da Cidade deve ser preenchido."></asp:RequiredFieldValidator>
                     </div>
                 </div>

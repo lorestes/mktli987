@@ -49,6 +49,15 @@ namespace Mkt.Cidades {
         protected global::System.Web.UI.WebControls.ListView lvwCidades;
         
         /// <summary>
+        /// dpCidades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager dpCidades;
+        
+        /// <summary>
         /// sqlCidade control.
         /// </summary>
         /// <remarks>

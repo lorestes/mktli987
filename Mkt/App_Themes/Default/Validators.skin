@@ -17,4 +17,7 @@ Default skin template. The following skins are provided as examples only.
     <asp:ValidationSummary ForeColor="#B94A48" runat="server" HeaderText="Os seguintes erros foram encontrados:" style="margin-bottom: 20px;" />
     <asp:RequiredFieldValidator runat="server" Display="none" ForeColor="#B94A48"></asp:RequiredFieldValidator>
     <asp:RegularExpressionValidator runat="server" Display="none"></asp:RegularExpressionValidator>
+    <asp:LinkButton SkinID="Salvar" runat="server" CssClass="btn btn-primary btn-block"><i class="icon icon-ok icon-white"></i> Salvar</asp:LinkButton>
+    <asp:LinkButton SkinID="Cancelar" runat="server" CssClass="btn btn-danger btn-block"><i class="icon icon-remove icon-white"></i> Cancelar</asp:LinkButton>
+
 
