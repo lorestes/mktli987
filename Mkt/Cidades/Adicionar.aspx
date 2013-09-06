@@ -22,7 +22,7 @@
                <div class="control-group">
                     <label class="control-label">Nome da Cidade</label> 
                     <div class="controls">
-                        <asp:TextBox ID="nom_cidadeTextBox" runat="server" Text='<%# Bind("nom_cidade") %>' /> <span class="label label-important">Obrigatório</span>
+                        <asp:TextBox ID="nom_cidadeTextBox" runat="server" Text='<%# Bind("nom_cidade") %>' />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="nom_cidadeTextBox" runat="server" ErrorMessage="Nome da Cidade deve ser preenchido."></asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -32,12 +32,18 @@
                     </div>
                <div class="control-group">
                     <br /><br />
-                    <div class="controls">
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                        <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastrar" Style="margin-right: 20px;" SkinID="Cadastrar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
                     </div>
-                </div>
-            </div>
+               </div>
+        </div>
         </InsertItemTemplate>
     </asp:FormView> 
     <asp:SqlDataSource ID="sqlNovoCidade" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 

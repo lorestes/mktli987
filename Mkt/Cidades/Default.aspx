@@ -15,7 +15,7 @@
     <br />
     <div class="row">
         <div class="span4">
-            <a class="btn btn-inverse" href="Adicionar.aspx">Cadastrar</a>
+            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon icon-plus-sign icon-white"></i> Cadastrar</a>
         </div>
         <div class="span8" style="text-align: right;">
             <asp:TextBox ID="txtProcurar" ClientIDMode="Static" CssClass="input-medium search-query" placeholder="Pesquisar..." runat="server"></asp:TextBox>
@@ -42,7 +42,7 @@
                     <asp:Label ID="tel1Label" runat="server" Text='<%# Eval("uf") %>' />
                 </td>
                 <td style="vertical-align: middle; text-align: center;">
-                    <a class="btn btn-inverse btn-small" href="Detalhes.aspx?p=<%# Eval("cod_cidade") %>"><i class="icon icon-plus icon-white"></i>Detalhes</a>
+                    <a class="btn btn-inverse btn-small" href="Detalhes.aspx?p=<%# Eval("cod_cidade") %>"><i class="icon icon-plus icon-white"></i> Detalhes</a>
                 </td>
             </tr>
         </ItemTemplate>
@@ -50,9 +50,9 @@
             <table id="itemPlaceholderContainer" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr id="Tr1" runat="server">
-                        <th style="width: 70%">Nome Cidade</th>
+                        <th style="width: 75%">Nome Cidade</th>
                         <th style="width: 10%">UF</th>
-                        <th style="width: 20%"></th>
+                        <th style="width: 15%"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,7 @@
     <asp:DataPager ID="dpCidades" PagedControlID="lvwCidades" PageSize="15" runat="server">
         <Fields>
             <asp:NextPreviousPagerField ShowFirstPageButton="True" ShowNextPageButton="false" />
-            <asp:NumericPagerField  />
+            <asp:NumericPagerField />
             <asp:NextPreviousPagerField ShowLastPageButton="True" ShowPreviousPageButton="false" />
         </Fields>
     </asp:DataPager>

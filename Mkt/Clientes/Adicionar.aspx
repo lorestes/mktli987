@@ -17,7 +17,7 @@
     <p>Preencha o formulário abaixo para cadastrar um novo cliente.</p>
     <br />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-    <asp:FormView ID="frwNovoCliente" RenderOuterTable="false" runat="server" DataKeyNames="cod_pessoa" DataSourceID="sqlNovoCliente" DefaultMode="Insert">
+    <asp:FormView ID="frwNovoCliente" RenderOuterTable="false" runat="server" DataKeyNames="cod_pessoa" OnItemInserted="frwNovoCliente_ItemInserted" DataSourceID="sqlNovoCliente" DefaultMode="Insert">
         <InsertItemTemplate>
             <div class="form form-horizontal">
                <div class="control-group">
@@ -138,12 +138,17 @@
                </div>
                <div class="control-group">
                     <br /><br />
-                    <div class="controls">
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                        <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
-               
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastrar" Style="margin-right: 20px;" SkinID="Cadastrar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
                     </div>
-                </div>
+               </div>
             </div>
         </InsertItemTemplate>
     </asp:FormView> 

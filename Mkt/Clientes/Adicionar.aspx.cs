@@ -14,9 +14,15 @@ namespace Mkt.Clientes
 
         }
 
-        protected void frwNovoCliente_PreRender(object sender, EventArgs e)
-        {
 
+        protected void InsertCancelButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Clientes");
+        }
+
+        protected void frwNovoCliente_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            Response.Redirect("~/Clientes");
         }
 
     }

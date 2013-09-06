@@ -13,5 +13,15 @@ namespace Mkt.Clientes
         {
 
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Clientes");
+        }
+
+        protected void frwNovoCliente_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            Response.Redirect("~/Clientes");
+        }
     }
 }
