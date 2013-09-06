@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Mkt.Fornecedores
+namespace Mkt.Cidades
 {
     public partial class Detalhes : System.Web.UI.Page
     {
@@ -14,14 +14,17 @@ namespace Mkt.Fornecedores
 
         }
 
-        protected void frwNovoFornecedor_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
-        {
-            Response.Redirect("~/Fornecedores");
-        }
+     
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Fornecedores");
+            Response.Redirect("/Cadastros/Cidades");
         }
+
+        protected void frwNovoCidade_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            Response.Redirect("/Cadastros/Cidades");
+        }
+
     }
 }

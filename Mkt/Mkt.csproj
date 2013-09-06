@@ -57,9 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cidades\Adicionar.aspx" />
-    <Content Include="Cidades\Default.aspx" />
-    <Content Include="Cidades\Detalhes.aspx" />
+    <Content Include="Cadastros\Cidades\Adicionar.aspx" />
+    <Content Include="Cadastros\Cidades\Default.aspx" />
+    <Content Include="Cadastros\Cidades\Detalhes.aspx" />
+    <Content Include="Cadastros\Default.aspx" />
     <Content Include="Clientes\Adicionar.aspx" />
     <Content Include="Clientes\Default.aspx" />
     <Content Include="Clientes\Detalhes.aspx" />
@@ -75,17 +76,16 @@
     <Content Include="Conteudo\bootstrap\js\bootstrap.js" />
     <Content Include="Conteudo\bootstrap\js\bootstrap.min.js" />
     <Content Include="Conteudo\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Financeiro\Pagar\Detalhes.aspx" />
     <Content Include="Financeiro\Pagar\DetalhesPagamento.aspx" />
-    <Content Include="Financeiro\Cadastros\FinHistoricoAdicionar.aspx" />
-    <Content Include="Financeiro\Cadastros\FinHistoricoDefault.aspx" />
-    <Content Include="Financeiro\Cadastros\FinHistoricoDetalhes.aspx" />
+    <Content Include="Cadastros\Financeiro\FinHistoricoAdicionar.aspx" />
+    <Content Include="Cadastros\Financeiro\FinHistoricoDefault.aspx" />
+    <Content Include="Cadastros\Financeiro\FinHistoricoDetalhes.aspx" />
     <Content Include="Financeiro\Pagar\Adicionar.aspx" />
     <Content Include="Financeiro\Pagar\Default.aspx" />
-    <Content Include="Financeiro\Cadastros\FinTipoBaixaAdicionar.aspx" />
-    <Content Include="Financeiro\Cadastros\FinTipoBaixaDefault.aspx" />
-    <Content Include="Financeiro\Cadastros\FinTipoBaixaDetalhes.aspx" />
+    <Content Include="Cadastros\Financeiro\FinTipoBaixaAdicionar.aspx" />
+    <Content Include="Cadastros\Financeiro\FinTipoBaixaDefault.aspx" />
+    <Content Include="Cadastros\Financeiro\FinTipoBaixaDetalhes.aspx" />
     <Content Include="Financeiro\Pagar\DetalhesDocumento.aspx" />
     <Content Include="Fornecedores\Adicionar.aspx" />
     <Content Include="Fornecedores\Default.aspx" />
@@ -115,26 +115,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BootstrapFormView.cs" />
-    <Compile Include="Cidades\Adicionar.aspx.cs">
+    <Compile Include="Cadastros\Cidades\Adicionar.aspx.cs">
       <DependentUpon>Adicionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cidades\Adicionar.aspx.designer.cs">
+    <Compile Include="Cadastros\Cidades\Adicionar.aspx.designer.cs">
       <DependentUpon>Adicionar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cidades\Default.aspx.cs">
+    <Compile Include="Cadastros\Cidades\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cidades\Default.aspx.designer.cs">
+    <Compile Include="Cadastros\Cidades\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cidades\Detalhes.aspx.cs">
+    <Compile Include="Cadastros\Cidades\Detalhes.aspx.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cidades\Detalhes.aspx.designer.cs">
+    <Compile Include="Cadastros\Cidades\Detalhes.aspx.designer.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clientes\Adicionar.aspx.cs">
       <DependentUpon>Adicionar.aspx</DependentUpon>
@@ -178,13 +185,6 @@
     <Compile Include="Contatos\Detalhes.aspx.designer.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Financeiro\Pagar\Detalhes.aspx.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,25 +199,25 @@
     <Compile Include="Financeiro\Pagar\DetalhesPagamento.aspx.designer.cs">
       <DependentUpon>DetalhesPagamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinHistoricoAdicionar.aspx.cs">
+    <Compile Include="Cadastros\Financeiro\FinHistoricoAdicionar.aspx.cs">
       <DependentUpon>FinHistoricoAdicionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinHistoricoAdicionar.aspx.designer.cs">
+    <Compile Include="Cadastros\Financeiro\FinHistoricoAdicionar.aspx.designer.cs">
       <DependentUpon>FinHistoricoAdicionar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinHistoricoDefault.aspx.cs">
+    <Compile Include="Cadastros\Financeiro\FinHistoricoDefault.aspx.cs">
       <DependentUpon>FinHistoricoDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinHistoricoDefault.aspx.designer.cs">
+    <Compile Include="Cadastros\Financeiro\FinHistoricoDefault.aspx.designer.cs">
       <DependentUpon>FinHistoricoDefault.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinHistoricoDetalhes.aspx.cs">
+    <Compile Include="Cadastros\Financeiro\FinHistoricoDetalhes.aspx.cs">
       <DependentUpon>FinHistoricoDetalhes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinHistoricoDetalhes.aspx.designer.cs">
+    <Compile Include="Cadastros\Financeiro\FinHistoricoDetalhes.aspx.designer.cs">
       <DependentUpon>FinHistoricoDetalhes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Financeiro\Pagar\Adicionar.aspx.cs">
@@ -234,25 +234,25 @@
     <Compile Include="Financeiro\Pagar\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinTipoBaixaAdicionar.aspx.cs">
+    <Compile Include="Cadastros\Financeiro\FinTipoBaixaAdicionar.aspx.cs">
       <DependentUpon>FinTipoBaixaAdicionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinTipoBaixaAdicionar.aspx.designer.cs">
+    <Compile Include="Cadastros\Financeiro\FinTipoBaixaAdicionar.aspx.designer.cs">
       <DependentUpon>FinTipoBaixaAdicionar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinTipoBaixaDefault.aspx.cs">
+    <Compile Include="Cadastros\Financeiro\FinTipoBaixaDefault.aspx.cs">
       <DependentUpon>FinTipoBaixaDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinTipoBaixaDefault.aspx.designer.cs">
+    <Compile Include="Cadastros\Financeiro\FinTipoBaixaDefault.aspx.designer.cs">
       <DependentUpon>FinTipoBaixaDefault.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinTipoBaixaDetalhes.aspx.cs">
+    <Compile Include="Cadastros\Financeiro\FinTipoBaixaDetalhes.aspx.cs">
       <DependentUpon>FinTipoBaixaDetalhes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Financeiro\Cadastros\FinTipoBaixaDetalhes.aspx.designer.cs">
+    <Compile Include="Cadastros\Financeiro\FinTipoBaixaDetalhes.aspx.designer.cs">
       <DependentUpon>FinTipoBaixaDetalhes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Financeiro\Pagar\DetalhesDocumento.aspx.cs">

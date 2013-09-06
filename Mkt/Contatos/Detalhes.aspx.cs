@@ -13,5 +13,15 @@ namespace Mkt.Contatos
         {
 
         }
+
+        protected void frwNovoContato_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            Response.Redirect("~/Contatos");
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Contatos");
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Mkt.Financeiro.Pagar
+namespace Mkt.Cidades
 {
     public partial class Adicionar : System.Web.UI.Page
     {
@@ -14,14 +14,16 @@ namespace Mkt.Financeiro.Pagar
 
         }
 
+     
         protected void InsertCancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Financeiro/Pagar");
+            Response.Redirect("/Cadastros/Cidades");
         }
 
-        protected void frwNovoDoc_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        protected void frwNovoCidade_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            Response.Redirect("/Financeiro/Pagar");
+            Response.Redirect("/Cadastros/Cidades");
+
         }
     }
 }

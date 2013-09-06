@@ -14,7 +14,7 @@
     <br />
     <div class="row">
         <div class="span4">
-            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon-plus icon-white"></i> Cadastrar Usuário</a>
+            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon icon-plus-sign icon-white"></i> Cadastrar</a>
         </div>
         <div class="span8" style="text-align: right;">
             <asp:TextBox ID="txtProcurar" ClientIDMode="Static" CssClass="input-medium search-query" placeholder="Pesquisar..." runat="server"></asp:TextBox>
@@ -40,7 +40,7 @@
                     <asp:Label ID="tel1Label" runat="server" Text='<%# Eval("LastActivityDate") %>' />
                 </td>
                 <td style="vertical-align: middle; text-align: center;">
-                    <a class="btn btn-inverse" href="Detalhes.aspx?p=<%# Eval("UserId") %>">Mais Detalhes</a>
+                    <a class="btn btn-inverse btn-small" href="Detalhes.aspx?p=<%# Eval("UserId") %>"><i class="icon icon-plus icon-white"></i> Detalhes</a>
                 </td>
             </tr>
         </ItemTemplate>
@@ -48,9 +48,9 @@
             <table id="itemPlaceholderContainer" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr id="Tr1" runat="server">
-                       <th style="width: 50%">Nome de Usuário</th>
-                       <th style="width: 30%">Última Atividade</th>
-                       <th style="width: 18%"></th>
+                       <th style="width: 65%">Nome de Usuário</th>
+                       <th style="width: 20%">Última Atividade</th>
+                       <th style="width: 15%"></th>
                     </tr>
                 </thead>
                 <tbody>

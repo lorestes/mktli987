@@ -17,7 +17,7 @@
     <p>Preencha o formulário abaixo para cadastrar um novo Serviço.</p>
     <br />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-    <asp:FormView ID="frwNovoServico" RenderOuterTable="false" runat="server" DataKeyNames="cod_servico" DataSourceID="sqlNovoServico" DefaultMode="Insert">
+    <asp:FormView ID="frwNovoServico" RenderOuterTable="false" runat="server" OnItemInserted="frwNovoServico_ItemInserted" DataKeyNames="cod_servico" DataSourceID="sqlNovoServico" DefaultMode="Insert">
         <InsertItemTemplate>
             <div class="form form-horizontal">
                <div class="control-group">
@@ -35,13 +35,18 @@
                     </div>
                 </div>               
                <div class="control-group">
-                    <br /><br />
-                    <div class="controls">
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                        <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
-               
+                    <br />
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastrar" Style="margin-right: 20px;" SkinID="Cadastrar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
                     </div>
-                </div>
+               </div>
             </div>
         </InsertItemTemplate>
     </asp:FormView> 
@@ -49,7 +54,7 @@
         InsertCommand="INSERT INTO [tab_servico] ([des_servico], [vlr_servico], [deletado]) VALUES (@des_servico, @vlr_servico, 0)">
         <InsertParameters>
             <asp:Parameter Name="des_servico" Type="String" />
-            <asp:Parameter Name="vlr_servico" Type="String" />
+            <asp:Parameter Name="vlr_servico" Type="Decimal" />
         </InsertParameters>
     </asp:SqlDataSource>
 </asp:Content>

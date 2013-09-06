@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Mkt.Financeiro.Pagar
+namespace Mkt.Financeiro
 {
-    public partial class Adicionar : System.Web.UI.Page
+    public partial class FinHistoricoAdicionar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,12 +16,12 @@ namespace Mkt.Financeiro.Pagar
 
         protected void InsertCancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Financeiro/Pagar");
+            Response.Redirect("/Cadastros/Financeiro/FinHistoricoDefault.aspx");
         }
 
-        protected void frwNovoDoc_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        protected void frwNovoHistorico_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            Response.Redirect("/Financeiro/Pagar");
+            Response.Redirect("/Cadastros/Financeiro/FinHistoricoDefault.aspx");
         }
     }
 }

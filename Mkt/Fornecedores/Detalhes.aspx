@@ -5,7 +5,7 @@
     <h2>Detalhes de Fornecedor</h2>
     <p>Utilize o formulário abaixo para visualizar e editar todas as informações sobre o Fornecedor.</p>
     <br />
-     <asp:FormView ID="frwNovoFornecedor" RenderOuterTable="False" runat="server" DataKeyNames="cod_pessoa" DataSourceID="sqlFornecedor" DefaultMode="Edit">
+     <asp:FormView ID="frwNovoFornecedor" RenderOuterTable="False" runat="server" OnItemUpdated="frwNovoFornecedor_ItemUpdated" DataKeyNames="cod_pessoa" DataSourceID="sqlFornecedor" DefaultMode="Edit">
         <EditItemTemplate>
             <form class="form-inline">
             <fieldset>
@@ -52,9 +52,17 @@
                 <label>Observação</label>
                 <asp:TextBox ID="obsTextBox" TextMode="MultiLine" style="resize:none; width: 400px; height: 80px;" runat="server" Text='<%# Bind("observacao") %>' />
                 <br /><br />
-                <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                <asp:LinkButton ID="btnCancelar" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
-             </fieldset>
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" Style="margin-right: 20px;" SkinID="Salvar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
+                    </div> 
+            </fieldset>
             </form>
         </EditItemTemplate>
     </asp:FormView>

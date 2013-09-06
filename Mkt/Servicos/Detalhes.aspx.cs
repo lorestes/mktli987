@@ -13,5 +13,15 @@ namespace Mkt.Serviços
         {
 
         }
+
+        protected void frwNovoServico_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            Response.Redirect("~/Servicos");
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Servicos");
+        }
     }
 }

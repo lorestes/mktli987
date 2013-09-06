@@ -5,7 +5,7 @@
     <h2>Detalhes de Contato</h2>
     <p>Utilize o formulário abaixo para visualizar e editar todas as informações sobre o Contato.</p>
     <br />
-     <asp:FormView ID="frwNovoContato" RenderOuterTable="False" runat="server" DataKeyNames="cod_contato" DataSourceID="sqlContato" DefaultMode="Edit">
+     <asp:FormView ID="frwNovoContato" RenderOuterTable="False" runat="server" OnItemUpdated="frwNovoContato_ItemUpdated" DataKeyNames="cod_contato" DataSourceID="sqlContato" DefaultMode="Edit">
         <EditItemTemplate>
             <form class="form-inline">
             <fieldset>
@@ -21,9 +21,17 @@
                 <label>e-mail</label>
                 <asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' />
                 <br /><br />
-                <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                <asp:LinkButton ID="btnCancelar" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
-             </fieldset>
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" Style="margin-right: 20px;" SkinID="Salvar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
+                    </div> 
+            </fieldset>
             </form>
         </EditItemTemplate>
     </asp:FormView>
@@ -39,11 +47,11 @@
             <asp:QueryStringParameter DefaultValue="" Name="cod_contato" QueryStringField="p" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="cod_contato" />
-            <asp:Parameter Name="nom_contato" />
-            <asp:Parameter Name="tel1" />
-            <asp:Parameter Name="tel2" />
-            <asp:Parameter Name="email" />
+            <asp:Parameter Name="cod_contato" Type="Int32" />
+            <asp:Parameter Name="nom_contato" Type="String" />
+            <asp:Parameter Name="tel1" Type="String" />
+            <asp:Parameter Name="tel2" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
         </UpdateParameters>
      </asp:SqlDataSource>
 </asp:Content>

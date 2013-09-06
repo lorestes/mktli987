@@ -5,7 +5,7 @@
     <h2>Documento a Pagar</h2>
     <p>Utilize o formulário abaixo para visualizar e editar todas as informações sobre o Documento a Pagar.</p>
     <br />
-     <asp:FormView ID="frwNovoDoc" RenderOuterTable="False" runat="server" DataKeyNames="cod_fin" DataSourceID="sqlDoc" DefaultMode="Edit">
+     <asp:FormView ID="frwNovoDoc" RenderOuterTable="False" runat="server" OnItemUpdated="frwNovoDoc_ItemUpdated" DataKeyNames="cod_fin" DataSourceID="sqlDoc" DefaultMode="Edit">
         <EditItemTemplate>
             <form class="form-inline">
             <fieldset>
@@ -31,7 +31,12 @@
 
                 <br /><br />
                 <label><h4>Detalhes do Pagamento:</h4></label>
-                
+                <label>Tipo</label>
+                <asp:DropDownList ID="StatusDropDownList" runat="server" Text='<%# Bind("status") %>' >
+                    <asp:ListItem Selected ="True" Text ="Aberto" Value="ABERTO" />
+                    <asp:ListItem Text ="Baixado" Value="BAIXADO" />
+                    <%--<asp:ListItem Text ="Cancelado" Value="CANCELADO" />--%>
+                </asp:DropDownList>
                 <label>Data Pagamento</label>
                 <asp:TextBox ID="pagamentoTextBox" runat="server" Text='<%# Bind("dt_pagamento") %>' />
                 <label>Tipo Baixa</label>
@@ -52,26 +57,33 @@
                 <asp:TextBox ID="vl_pagoTextBox" runat="server" Text='<%# Bind("vl_baixado") %>' />
 
                 <br /><br />
-                <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                <asp:LinkButton ID="btnCancelar" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
-             </fieldset>
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" Style="margin-right: 20px;" SkinID="Salvar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
+                    </div> 
+            </fieldset>
             </form>
         </EditItemTemplate>
     </asp:FormView>
-
-
+    
 
     <asp:SqlDataSource ID="sqlDoc" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 
         SelectCommand="SELECT * FROM tab_finpagar WHERE cod_fin = @cod_fin" 
         UpdateCommand="UPDATE tab_finpagar
-                        SET cod_fornec    = @cod_fornec,
-                            cod_hist      = @cod_hist,
-                            numdocumento  = @numdocumento,
-                            dt_emissao    = @dt_emissao,
-                            dt_vencimento = @dt_vencimento,
-                            vl_original   = @vl_original,
-                            obs           = @observacao,
-
+                        SET cod_fornec     = @cod_fornec,
+                            cod_hist       = @cod_hist,
+                            numdocumento   = @numdocumento,
+                            dt_emissao     = @dt_emissao,
+                            dt_vencimento  = @dt_vencimento,
+                            vl_original    = @vl_original,
+                            obs            = @observacao,
+                            status         = @status,
                             dt_pagamento   = @dt_pagamento,
                             cod_tpbaixa    = @cod_tpbaixa,
                             vl_juros       = @vl_juros,
@@ -86,16 +98,16 @@
             <asp:QueryStringParameter DefaultValue="" Name="cod_fin" QueryStringField="p" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="cod_fin"       Type="Int32" />
-            <asp:Parameter Name="cod_fornec"    Type="Int32" />
-            <asp:Parameter Name="cod_operador"  Type="Int32" />
-            <asp:Parameter Name="cod_hist"      Type="Int32" />
-            <asp:Parameter Name="numdocumento"  Type="String" />
-            <asp:Parameter Name="dt_emissao"    Type="String" />
-            <asp:Parameter Name="dt_vencimento" Type="String" />
-            <asp:Parameter Name="vl_original"   Type="Decimal" />
-            <asp:Parameter Name="observacao"    Type="String" />
-
+            <asp:Parameter Name="cod_fin"        Type="Int32" />
+            <asp:Parameter Name="cod_fornec"     Type="Int32" />
+            <asp:Parameter Name="cod_operador"   Type="Int32" />
+            <asp:Parameter Name="cod_hist"       Type="Int32" />
+            <asp:Parameter Name="numdocumento"   Type="String" />
+            <asp:Parameter Name="dt_emissao"     Type="String" />
+            <asp:Parameter Name="dt_vencimento"  Type="String" />
+            <asp:Parameter Name="vl_original"    Type="Decimal" />
+            <asp:Parameter Name="observacao"     Type="String" />
+            <asp:Parameter Name="status"         Type="String" />
             <asp:Parameter Name="dt_pagamento"   Type ="String" />
             <asp:Parameter Name="cod_tpbaixa"    Type ="Int32" />
             <asp:Parameter Name="vl_juros"       Type="Decimal" />

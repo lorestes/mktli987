@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mkt
+namespace Mkt.Cadastros
 {
 
 
-    public partial class Default1
+    public partial class Default
     {
     }
 }

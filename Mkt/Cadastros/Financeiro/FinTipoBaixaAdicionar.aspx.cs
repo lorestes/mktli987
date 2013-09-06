@@ -5,25 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Mkt.Cidades
+namespace Mkt.Financeiro
 {
-    public partial class Adicionar : System.Web.UI.Page
+    public partial class FinTipoBaixaAdicionar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-     
         protected void InsertCancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Cidades");
+            Response.Redirect("/Cadastros/Financeiro/FinTipoBaixaDefault.aspx");
         }
 
-        protected void frwNovoCidade_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        protected void frwNovoTipo_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            Response.Redirect("~/Cidades");
-
+            Response.Redirect("/Cadastros/Financeiro/FinTipoBaixaDefault.aspx");
         }
+
     }
 }

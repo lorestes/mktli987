@@ -14,7 +14,7 @@
     <br />
     <div class="row">
         <div class="span4">
-            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon-plus icon-white"></i> Cadastrar Serviço</a>
+            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon icon-plus-sign icon-white"></i> Cadastrar</a>
         </div>
         <div class="span8" style="text-align: right;">
             <asp:TextBox ID="txtProcurar" ClientIDMode="Static" CssClass="input-medium search-query" placeholder="Pesquisar..." runat="server"></asp:TextBox>
@@ -40,7 +40,7 @@
                     <asp:Label ID="vlr_servicoLabel" runat="server" Text='<%# Eval("vlr_servico") %>' />
                 </td>
                 <td style="vertical-align: middle; text-align: center;">
-                    <a class="btn btn-inverse" href="Detalhes.aspx?p=<%# Eval("cod_servico") %>">Mais Detalhes</a>
+                    <a class="btn btn-inverse btn-small" href="Detalhes.aspx?p=<%# Eval("cod_servico") %>"><i class="icon icon-plus icon-white"></i> Detalhes</a>
                 </td>
             </tr>
         </ItemTemplate>
@@ -48,9 +48,9 @@
             <table id="itemPlaceholderContainer" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr id="Tr1" runat="server">
-                       <th style="width: 60%">Serviço</th>
+                       <th style="width: 65%">Serviço</th>
                        <th style="width: 20%">Valor</th>
-                       <th style="width: 20%"></th>
+                       <th style="width: 15%"></th>
                     </tr>
                 </thead>
                 <tbody>

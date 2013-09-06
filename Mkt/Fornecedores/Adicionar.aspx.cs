@@ -13,5 +13,15 @@ namespace Mkt.Fornecedores
         {
 
         }
+
+        protected void InsertCancelButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Fornecedores");
+        }
+
+        protected void frwNovoFornecedor_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            Response.Redirect("~/Fornecedores");
+        }
     }
 }

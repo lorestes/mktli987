@@ -10,11 +10,11 @@
             });
         });
     </script>
-    <h2>Financeiro - Documentos a Pagar</h2>
+    <h2>Documentos a Pagar</h2>
     <br />
     <div class="row">
         <div class="span4">
-            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon-plus icon-white"></i> Novo Documento</a>
+            <a class="btn btn-inverse" href="Adicionar.aspx"><i class="icon icon-plus-sign icon-white"></i> Cadastrar</a>
         </div>
         <div class="span8" style="text-align: right;">
             <asp:TextBox ID="txtProcurar" ClientIDMode="Static" CssClass="input-medium search-query" placeholder="Pesquisar..." runat="server"></asp:TextBox>
@@ -52,7 +52,7 @@
                     <asp:Label ID="vl_originalLabel" runat="server" Text='<%# Eval("vl_original") %>' />
                 </td>
                 <td style="vertical-align: middle; text-align: center;">
-                    <a class="btn btn-inverse" href="Detalhes.aspx?p=<%# Eval("cod_fin") %>">Mais Detalhes</a>
+                    <a class="btn btn-inverse btn-small" href="Detalhes.aspx?p=<%# Eval("cod_fin") %>"><i class="icon icon-plus icon-white"></i> Detalhes</a>
                 </td>
             </tr>
         </ItemTemplate>

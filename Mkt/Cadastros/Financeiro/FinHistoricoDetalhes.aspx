@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentPlaceHolder" runat="server">
-    <h2>Detalhes da Histórico Financeiro</h2>
+    <h2>Detalhes do Histórico Financeiro</h2>
     <p>Utilize o formulário abaixo para visualizar e editar todas as informações sobre o Histórico Financeiro.</p>
     <br />
-     <asp:FormView ID="frwNovoHistorico" RenderOuterTable="False" runat="server" DataKeyNames="cod_hist" DataSourceID="sqlHistorico" DefaultMode="Edit">
+     <asp:FormView ID="frwNovoHistorico" RenderOuterTable="False" runat="server" OnItemUpdated="frwNovoHistorico_ItemUpdated" DataKeyNames="cod_hist" DataSourceID="sqlHistorico" DefaultMode="Edit">
         <EditItemTemplate>
             <form class="form-inline">
             <fieldset>
@@ -19,9 +19,17 @@
                     <asp:ListItem Text ="Receber" Value="R" />
                 </asp:DropDownList>
                 <br /><br />
-                <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" CssClass="btn btn-primary" style="margin-right: 20px;" />
-                <asp:LinkButton ID="btnCancelar" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" CssClass="btn btn-danger" />
-             </fieldset>
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" Style="margin-right: 20px;" SkinID="Salvar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
+                    </div>
+                 </fieldset>
             </form>
         </EditItemTemplate>
     </asp:FormView>

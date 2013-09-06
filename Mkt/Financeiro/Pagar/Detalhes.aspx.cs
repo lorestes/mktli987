@@ -13,5 +13,15 @@ namespace Mkt.Financeiro.Pagar
         {
 
         }
+
+        protected void frwNovoDoc_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            Response.Redirect("/Financeiro/Pagar");
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Financeiro/Pagar");
+        }
     }
 }

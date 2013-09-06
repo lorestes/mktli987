@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="FinHistoricoDefault.aspx.cs" Inherits="Mkt.Financeiro.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="FinTipoBaixaDefault.aspx.cs" Inherits="Mkt.Financeiro.FinTipoBaixaDefault" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentPlaceHolder" runat="server">
@@ -10,11 +10,11 @@
             });
         });
     </script>
-    <h2>Histórico Financeiro</h2>
+    <h2>Tipo Baixa</h2>
     <br />
     <div class="row">
         <div class="span4">
-            <a class="btn btn-inverse" href="FinHistoricoAdicionar.aspx"><i class="icon-plus icon-white"></i> Cadastrar Histórico Financeiro</a>
+            <a class="btn btn-inverse" href="FinTipoBaixaAdicionar.aspx"><i class="icon icon-plus-sign icon-white"></i> Cadastrar</a>
         </div>
         <div class="span8" style="text-align: right;">
             <asp:TextBox ID="txtProcurar" ClientIDMode="Static" CssClass="input-medium search-query" placeholder="Pesquisar..." runat="server"></asp:TextBox>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <br />
-    <asp:ListView ID="lvwHistorico" runat="server" DataKeyNames="cod_hist" DataSourceID="sqlHistorico">
+    <asp:ListView ID="lvwTipo" runat="server" DataKeyNames="cod_tipo" DataSourceID="sqlTipo">
         <EmptyDataTemplate>
             <table id="Table1" runat="server" style="">
                 <tr>
@@ -34,13 +34,10 @@
         <ItemTemplate>
             <tr>
                 <td style="vertical-align: middle;">
-                    <asp:Label ID="descricaoLabel" runat="server" Text='<%# Eval("descricao") %>' />
-                </td>
-                <td style="vertical-align: middle;">
-                    <asp:Label ID="tipoLabel" runat="server" Text='<%# (String)Eval("tipo") == "P" ? "Pagar" : "Receber"  %>' />
+                    <asp:Label ID="nom_tipoLabel" runat="server" Text='<%# Eval("nom_tipo") %>' />
                 </td>
                 <td style="vertical-align: middle; text-align: center;">
-                    <a class="btn btn-inverse" href="FinHistoricoDetalhes.aspx?p=<%# Eval("cod_hist") %>">Mais Detalhes</a>
+                    <a class="btn btn-inverse btn-small" href="FinTipoBaixaDetalhes.aspx?p=<%# Eval("cod_tipo") %>"><i class="icon icon-plus icon-white"></i> Detalhes</a>
                 </td>
             </tr>
         </ItemTemplate>
@@ -48,9 +45,8 @@
             <table id="itemPlaceholderContainer" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr id="Tr1" runat="server">
-                       <th style="width: 60%">Nome Historico</th>
-                       <th style="width: 20%">Tipo</th>
-                       <th style="width: 20%"></th>
+                       <th style="width: 85%">Tipo Baixa</th>
+                       <th style="width: 15%"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,8 +56,7 @@
             </table>
         </LayoutTemplate>
     </asp:ListView>
-    <asp:SqlDataSource ID="sqlHistorico" runat="server" DataSourceMode="DataSet" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 
-        SelectCommand="select * from tab_finhistorico where deletado = 0">
+    <asp:SqlDataSource ID="sqlTipo" runat="server" DataSourceMode="DataSet" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 
+        SelectCommand="select * from tab_fintipobaixa where deletado = 0">
     </asp:SqlDataSource>
 </asp:Content>
-
