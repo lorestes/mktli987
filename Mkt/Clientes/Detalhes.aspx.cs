@@ -11,7 +11,8 @@ namespace Mkt.Clientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["p"] == null)
+                Response.Redirect("~/Clientes");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
