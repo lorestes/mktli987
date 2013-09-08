@@ -36,8 +36,8 @@
                 <td style="vertical-align: middle;">
                     <asp:Label ID="nom_contatoLabel" runat="server" Text='<%# Eval("UserName") %>' />
                 </td>
-                <td style="vertical-align: middle;">
-                    <asp:Label ID="tel1Label" runat="server" Text='<%# Eval("LastActivityDate") %>' />
+                <td style="vertical-align: middle; text-align: center;">
+                    <asp:Label ID="tel1Label" runat="server" Text='<%# Eval("LastActivityDate", "{0:dd/MM/yyyy HH:mm}h") %>' />
                 </td>
                 <td style="vertical-align: middle; text-align: center;">
                     <a class="btn btn-inverse btn-small" href="Detalhes.aspx?p=<%# Eval("UserId") %>"><i class="icon icon-plus icon-white"></i> Detalhes</a>
@@ -45,11 +45,11 @@
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" class="table table-striped table-bordered table-hover">
+            <table id="itemPlaceholderContainer" class="table table-striped table-bordered table-hover table">
                 <thead>
                     <tr id="Tr1" runat="server">
                        <th style="width: 65%">Nome de Usuário</th>
-                       <th style="width: 20%">Última Atividade</th>
+                       <th style="width: 20%; text-align:center">Última Atividade</th>
                        <th style="width: 15%"></th>
                     </tr>
                 </thead>

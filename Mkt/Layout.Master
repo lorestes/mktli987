@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.Master.cs" Inherits="Mkt.Master" %>
+
 <% string local = HttpContext.Current.Request.Url.AbsolutePath;
    Session["local"] = local.Substring(1, local.IndexOf('/', local.IndexOf('/') + 1)).Replace("/", "");
 %>
@@ -12,35 +13,54 @@
 </head>
 <body>
     <form id="frmMain" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-        <Scripts>
-            <asp:ScriptReference Path="~/Scripts/jquery-2.0.2.min.js" />
-            <asp:ScriptReference Path="~/Conteudo/bootstrap/js/bootstrap.min.js" />
-        </Scripts>
-    </asp:ScriptManager>
-    <div>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <a class="brand" href="/Home" style="margin-left:2px;">Liverpool</a>
-                <ul class="nav">
-                    <% if ((string)Session["local"] == "Home") { %> <li class="active"><a href="/Home">Home</a></li> <% } else { %> <li><a href="/Home">Home</a></li> <% } %> 
-                    <% if ((string)Session["local"] == "Cadastros") { %> <li class="active"><a href="/Cadastros">Cadastros</a></li> <% } else { %> <li><a href="/Cadastros">Cadastros</a></li> <% } %>
-                    <% if ((string)Session["local"] == "Clientes") { %> <li class="active"><a href="/Clientes">Clientes</a></li> <% } else { %> <li><a href="/Clientes">Clientes</a></li> <% } %>
-                    <% if ((string)Session["local"] == "Fornecedores") { %> <li class="active"><a href="/Fornecedores">Fornecedores</a></li> <% } else { %> <li><a href="/Fornecedores">Fornecedores</a></li> <% } %>
-                    <% if ((string)Session["local"] == "Contatos") { %> <li class="active"><a href="/Contatos">Contatos</a></li> <% } else { %> <li><a href="/Contatos">Contatos</a></li> <% } %>
-                    <% if ((string)Session["local"] == "Servicos") { %> <li class="active"><a href="/Servicos">Serviços</a></li> <% } else { %> <li><a href="/Servicos">Serviços</a></li> <% } %>
-                    <% if ((string)Session["local"] == "Financeiro") { %> <li class="active"><a href="/Financeiro/Pagar">Financeiro</a></li> <% } else { %> <li><a href="/Financeiro/Pagar">Financeiro</a></li> <% } %>
-                    <% if ((string)Session["local"] == "Usuarios") { %> <li class="active"><a href="/Usuarios">Usuários</a></li> <% } else { %> <li><a href="/Usuarios">Usuários</a></li> <% } %>
-                </ul>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-2.0.2.min.js" />
+                <asp:ScriptReference Path="~/Conteudo/bootstrap/js/bootstrap.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="/Home" style="margin-left: 2px;">Liverpool</a>
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/Clientes" runat="server">Clientes</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/Fornecedores" runat="server">Fornecedores</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink4" NavigateUrl="~/Contatos" runat="server">Contatos</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/Usuarios" runat="server">Usuários</asp:HyperLink></li>
+                            </ul>
+                        </li>
+                        <% if ((string)Session["local"] == "Servicos")
+                           { %>
+                        <li class="active"><a href="/Servicos">Serviços</a></li>
+                        <% }
+                           else
+                           { %>
+                        <li><a href="/Servicos">Serviços</a></li>
+                        <% } %>
+                        <% if ((string)Session["local"] == "Financeiro")
+                           { %>
+                        <li class="active"><a href="/Financeiro/Pagar">Financeiro</a></li>
+                        <% }
+                           else
+                           { %>
+                        <li><a href="/Financeiro/Pagar">Financeiro</a></li>
+                        <% } %>
+                       
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div style="width: 940px; margin: auto;" class="container">
+                <asp:ContentPlaceHolder ID="contentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
-        <br /><br /><br />
-        <div style="width: 940px; margin: auto;" class="container">
-            <asp:ContentPlaceHolder ID="contentPlaceHolder" runat="server">
-            
-            </asp:ContentPlaceHolder>
-        </div>
-    </div>
     </form>
 </body>
 </html>
