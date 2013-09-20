@@ -16,12 +16,12 @@ namespace Mkt.Financeiro
 
         protected void InsertCancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Cadastros/Financeiro/FinTipoBaixaDefault.aspx");
+            Response.Redirect("~/Financeiro/Cadastros/FinTipoBaixaDefault.aspx");
         }
 
         protected void frwNovoTipo_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            Response.Redirect("/Cadastros/Financeiro/FinTipoBaixaDefault.aspx");
+            Response.Redirect("~/Financeiro/Cadastros/FinTipoBaixaDefault.aspx");
         }
 
     }

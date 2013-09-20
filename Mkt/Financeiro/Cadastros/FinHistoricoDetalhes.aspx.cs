@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Mkt.Financeiro
 {
-    public partial class FinTipoBaixaDetalhes : System.Web.UI.Page
+    public partial class FinHistoricoDetalhes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,12 +16,12 @@ namespace Mkt.Financeiro
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Cadastros/Financeiro/FinTipoBaixaDefault.aspx");
+            Response.Redirect("~/Financeiro/Cadastros//FinHistoricoDefault.aspx");
         }
 
-        protected void frwNovoTipo_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        protected void frwNovoHistorico_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
-            Response.Redirect("/Cadastros/Financeiro/FinTipoBaixaDefault.aspx");
+            Response.Redirect("~/Financeiro/Cadastros//FinHistoricoDefault.aspx");
         }
     }
 }

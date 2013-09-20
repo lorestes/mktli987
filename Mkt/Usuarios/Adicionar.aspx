@@ -53,11 +53,18 @@
                     CssClass="field-validation-error"  ErrorMessage="Senha e Confirmação de Senha devem ser iguais." />
             </div>
         </div>
-        <div class="control-group">
-            <div class="controls">
-                <asp:Button ID="btnCadastrar" OnClick="btnCadastrar_Click" runat="server" Text="Cadastrar Usuário" CssClass="btn btn-primary" />
-                <%--<asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn" NavigateUrl="~/Usuarios">Cancelar</asp:HyperLink>--%>
-            </div>
-        </div>
+               <div class="control-group">
+                    <br /><br />
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertButton" OnClick="InsertButton_Click" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastrar" Style="margin-right: 20px;" SkinID="Cadastrar" />
+
+                        </div>
+                        <div class="span2">
+                            <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+
+                        </div>
+                    </div>
+               </div>
     </div>
 </asp:Content>

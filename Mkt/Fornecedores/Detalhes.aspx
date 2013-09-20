@@ -71,8 +71,10 @@
         UpdateCommand="UPDATE tab_pessoa 
                         SET razaosocial = @razaosocial, 
                             nom_fantasia = @nom_fantasia, 
-                            fis_jur = @fis_jur, tipo_pessoa = @tipo_pessoa, 
-                            cod_cidade = @cod_cidade, endereco = @endereco, 
+                            fis_jur = @fis_jur, 
+                            tipo_pessoa = tipo_pessoa, 
+                            cod_cidade = @cod_cidade, 
+                            endereco = @endereco, 
                             numero = @numero, 
                             complemento = @complemento, 
                             bairro = @bairro, 
@@ -83,7 +85,7 @@
                             tel2 = @tel2, 
                             fax = @fax, 
                             email = @email, 
-                            deletado = @deletado, 
+                            deletado = deletado, 
                             observacao = @observacao, 
                             dt_atualizado = GETDATE() 
                         WHERE cod_pessoa = @cod_pessoa">
@@ -91,25 +93,25 @@
             <asp:QueryStringParameter DefaultValue="" Name="cod_pessoa" QueryStringField="p" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="cod_pessoa" />
-            <asp:Parameter Name="razaosocial" />
-            <asp:Parameter Name="nom_fantasia" />
-            <asp:Parameter Name="fis_jur" />
-            <asp:Parameter Name="tipo_pessoa" />
-            <asp:Parameter Name="cod_cidade" />
-            <asp:Parameter Name="endereco" />
-            <asp:Parameter Name="numero" />
-            <asp:Parameter Name="complemento" />
-            <asp:Parameter Name="bairro" />
-            <asp:Parameter Name="cep" />
-            <asp:Parameter Name="cnpj_cpf" />
-            <asp:Parameter Name="ie_rg" />
-            <asp:Parameter Name="tel1" />
-            <asp:Parameter Name="tel2" />
-            <asp:Parameter Name="fax" />
-            <asp:Parameter Name="email" />
-            <asp:Parameter Name="deletado" />
-            <asp:Parameter Name="observacao" />
+            <asp:Parameter Name="cod_pessoa" Type="Int32" />
+            <asp:Parameter Name="razaosocial" Type="String" />
+            <asp:Parameter Name="nom_fantasia" Type="String" />
+            <asp:Parameter Name="fis_jur" Type="String" />
+            <%--<asp:Parameter Name="tipo_pessoa" Type="String" />--%>
+            <asp:ControlParameter ControlID="ctl00$contentPlaceHolder$frwNovoFornecedor$cidadesDDL" Name="cod_cidade" Type="Int32" />
+            <asp:Parameter Name="endereco" Type="String" />
+            <asp:Parameter Name="numero" Type="String" />
+            <asp:Parameter Name="complemento" Type="String" />
+            <asp:Parameter Name="bairro" Type="String" />
+            <asp:Parameter Name="cep" Type="String" />
+            <asp:Parameter Name="cnpj_cpf" Type="String" />
+            <asp:Parameter Name="ie_rg" Type="String" />
+            <asp:Parameter Name="tel1" Type="String" />
+            <asp:Parameter Name="tel2" Type="String" />
+            <asp:Parameter Name="fax" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
+            <%--<asp:Parameter Name="deletado" Type="Boolean" />--%>
+            <asp:Parameter Name="observacao" Type="String"  />
         </UpdateParameters>
      </asp:SqlDataSource>
      <asp:SqlDataSource ID="sqlEstados" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" SelectCommand="SELECT [COD_UF] FROM [tab_uf]"></asp:SqlDataSource>

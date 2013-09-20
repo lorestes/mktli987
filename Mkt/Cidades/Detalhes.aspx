@@ -21,11 +21,9 @@
                     <div class="row-fluid">
                         <div class="span2">
                             <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" Style="margin-right: 20px;" SkinID="Salvar" />
-
                         </div>
                         <div class="span2">
                             <asp:LinkButton ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
-
                         </div>
                     </div>
                 </fieldset>
@@ -50,3 +48,4 @@
     <asp:SqlDataSource ID="sqlEstados" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>"
         SelectCommand="SELECT [COD_UF] FROM [tab_uf]"></asp:SqlDataSource>
 </asp:Content>
+ 

@@ -35,7 +35,7 @@
                 <asp:DropDownList ID="StatusDropDownList" runat="server" Text='<%# Bind("status") %>' >
                     <asp:ListItem Selected ="True" Text ="Aberto" Value="ABERTO" />
                     <asp:ListItem Text ="Baixado" Value="BAIXADO" />
-                    <%--<asp:ListItem Text ="Cancelado" Value="CANCELADO" />--%>
+                    <asp:ListItem Text ="Cancelado" Value="CANCELADO" />
                 </asp:DropDownList>
                 <label>Data Pagamento</label>
                 <asp:TextBox ID="pagamentoTextBox" runat="server" Text='<%# Bind("dt_pagamento") %>' />
@@ -60,11 +60,9 @@
                     <div class="row-fluid">
                         <div class="span2">
                             <asp:LinkButton ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" Text="Salvar" Style="margin-right: 20px;" SkinID="Salvar" />
-
                         </div>
                         <div class="span2">
                             <asp:LinkButton ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
-
                         </div>
                     </div> 
             </fieldset>
@@ -72,7 +70,6 @@
         </EditItemTemplate>
     </asp:FormView>
     
-
     <asp:SqlDataSource ID="sqlDoc" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 
         SelectCommand="SELECT * FROM tab_finpagar WHERE cod_fin = @cod_fin" 
         UpdateCommand="UPDATE tab_finpagar
@@ -98,10 +95,10 @@
             <asp:QueryStringParameter DefaultValue="" Name="cod_fin" QueryStringField="p" />
         </SelectParameters>
         <UpdateParameters>
+            <asp:ControlParameter ControlID="ctl00$contentPlaceHolder$frwNovoDoc$fornecDDL" Name="cod_fornec"  Type="Int32" />
+            <asp:ControlParameter ControlID="ctl00$contentPlaceHolder$frwNovoDoc$TipoBxDDL" Name="cod_tpbaixa" Type ="Int32" />
+            <asp:ControlParameter ControlID="ctl00$contentPlaceHolder$frwNovoDoc$historicoDDL" Name="cod_hist" Type="Int32" />
             <asp:Parameter Name="cod_fin"        Type="Int32" />
-            <asp:Parameter Name="cod_fornec"     Type="Int32" />
-            <asp:Parameter Name="cod_operador"   Type="Int32" />
-            <asp:Parameter Name="cod_hist"       Type="Int32" />
             <asp:Parameter Name="numdocumento"   Type="String" />
             <asp:Parameter Name="dt_emissao"     Type="String" />
             <asp:Parameter Name="dt_vencimento"  Type="String" />
@@ -109,7 +106,6 @@
             <asp:Parameter Name="observacao"     Type="String" />
             <asp:Parameter Name="status"         Type="String" />
             <asp:Parameter Name="dt_pagamento"   Type ="String" />
-            <asp:Parameter Name="cod_tpbaixa"    Type ="Int32" />
             <asp:Parameter Name="vl_juros"       Type="Decimal" />
             <asp:Parameter Name="vl_multa"       Type  ="Decimal" />
             <asp:Parameter Name="vl_despbanco"   Type="Decimal" />
@@ -128,6 +124,5 @@
     <asp:SqlDataSource ID="SqlTipo" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 
         SelectCommand="SELECT cod_tipo, nom_tipo FROM tab_fintipobaixa (NOLOCK) WHERE deletado = 0">
     </asp:SqlDataSource>
-
-
+    
 </asp:Content>

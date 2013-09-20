@@ -5,25 +5,23 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Mkt.Cidades
+namespace Mkt.Financeiro
 {
-    public partial class Adicionar : System.Web.UI.Page
+    public partial class FinHistoricoAdicionar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
-     
         protected void InsertCancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Cadastros/Cidades");
+            Response.Redirect("~/Financeiro/Cadastros/FinHistoricoDefault.aspx");
         }
 
-        protected void frwNovoCidade_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        protected void frwNovoHistorico_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            Response.Redirect("/Cadastros/Cidades");
-
+            Response.Redirect("~/Financeiro/Cadastros//FinHistoricoDefault.aspx");
         }
     }
 }

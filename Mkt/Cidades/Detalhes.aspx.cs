@@ -18,12 +18,12 @@ namespace Mkt.Cidades
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Cadastros/Cidades");
+            Response.Redirect("~/Cidades");
         }
 
         protected void frwNovoCidade_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
-            Response.Redirect("/Cadastros/Cidades");
+            Response.Redirect("~/Cidades");
         }
 
     }

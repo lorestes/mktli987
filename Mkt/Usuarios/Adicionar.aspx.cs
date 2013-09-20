@@ -15,7 +15,12 @@ namespace Mkt.Usuarios
 
         }
 
-        protected void btnCadastrar_Click(object sender, EventArgs e)
+        protected void InsertCancelButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Usuarios");
+        }
+
+        protected void InsertButton_Click(object sender, EventArgs e)
         {
             Membership.CreateUser(UserName.Text, Password.Text, Email.Text);
             Response.Redirect("~/Usuarios");
