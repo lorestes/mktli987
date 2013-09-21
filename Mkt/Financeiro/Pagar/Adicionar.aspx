@@ -94,8 +94,8 @@
             <asp:Parameter Name="cod_operador"  Type="Int32" />
             <asp:ControlParameter Name="cod_hist" ControlID="ctl00$contentPlaceHolder$frwNovoDoc$historicoDDL"  Type="Int32" />
             <asp:Parameter Name="numdocumento"  Type="String" />
-            <asp:Parameter Name="dt_emissao"    Type="String" />
-            <asp:Parameter Name="dt_vencimento" Type="String" />
+            <asp:Parameter Name="dt_emissao"    Type="DateTime" />
+            <asp:Parameter Name="dt_vencimento" Type="DateTime" />
             <asp:Parameter Name="vl_original"   Type="Decimal" />
             <asp:Parameter Name="observacao"    Type="String" />
         </InsertParameters>

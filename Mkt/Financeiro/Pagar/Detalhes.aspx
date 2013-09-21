@@ -100,14 +100,14 @@
             <asp:ControlParameter ControlID="ctl00$contentPlaceHolder$frwNovoDoc$historicoDDL" Name="cod_hist" Type="Int32" />
             <asp:Parameter Name="cod_fin"        Type="Int32" />
             <asp:Parameter Name="numdocumento"   Type="String" />
-            <asp:Parameter Name="dt_emissao"     Type="String" />
-            <asp:Parameter Name="dt_vencimento"  Type="String" />
+            <asp:Parameter Name="dt_emissao"     Type="DateTime" />
+            <asp:Parameter Name="dt_vencimento"  Type="DateTime" />
             <asp:Parameter Name="vl_original"    Type="Decimal" />
             <asp:Parameter Name="observacao"     Type="String" />
             <asp:Parameter Name="status"         Type="String" />
-            <asp:Parameter Name="dt_pagamento"   Type ="String" />
+            <asp:Parameter Name="dt_pagamento"   Type="DateTime" />
             <asp:Parameter Name="vl_juros"       Type="Decimal" />
-            <asp:Parameter Name="vl_multa"       Type  ="Decimal" />
+            <asp:Parameter Name="vl_multa"       Type="Decimal" />
             <asp:Parameter Name="vl_despbanco"   Type="Decimal" />
             <asp:Parameter Name="vl_desconto"    Type="Decimal" />
             <asp:Parameter Name="vl_descpontual" Type="Decimal" />

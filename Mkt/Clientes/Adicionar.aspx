@@ -10,7 +10,8 @@
     <script type="text/javascript">
         $(function () {
             $('#txtCep').mask('99999-999');
-            $('#txtTel1, #txtTel2, #txtFax').mask('(99) 9999-9999');
+            $('#txtTel1, #txtFax').mask('(99) 9999-9999');
+            $('#txtTel2').mask('(99) 99999-9999');
         });
     </script>
     <h2>Cadastrar Cliente</h2>

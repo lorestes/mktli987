@@ -10,7 +10,8 @@
     <script type="text/javascript">
         $(function () {
             $('#txtCep').mask('99999-999');
-            $('#txtTel1, #txtTel2, #txtFax').mask('(99) 9999-9999');
+            $('#txtTel1, #txtFax').mask('(99) 9999-9999');
+            $('#txtTel2').mask('(99) 99999-9999');
         });
     </script>
     <h2>Cadastrar Fornecedores</h2>
@@ -153,7 +154,7 @@
         </InsertItemTemplate>
     </asp:FormView> 
     <asp:SqlDataSource ID="sqlNovoFornecedor" runat="server" ConnectionString="<%$ ConnectionStrings:marketingdbConnectionString %>" 
-        InsertCommand="INSERT INTO [tab_pessoa] ([razaosocial], [nom_fantasia], [fis_jur], [tipo_pessoa], [cod_cidade], [endereco], [numero], [complemento], [bairro], [cep], [cnpj_cpf], [ie_rg], [dt_cadastro], [dt_atualizado], [tel1], [tel2], [fax], [email], [observacao], [deletado]) VALUES (@razaosocial, @nom_fantasia, @fis_jur, 'C', @cod_cidade, @endereco, @numero, @complemento, @bairro, @cep, @cnpj_cpf, @ie_rg, GETDATE(), GETDATE(), @tel1, @tel2, @fax, @email, @observacao, 0)">
+        InsertCommand="INSERT INTO [tab_pessoa] ([razaosocial], [nom_fantasia], [fis_jur], [tipo_pessoa], [cod_cidade], [endereco], [numero], [complemento], [bairro], [cep], [cnpj_cpf], [ie_rg], [dt_cadastro], [dt_atualizado], [tel1], [tel2], [fax], [email], [observacao], [deletado]) VALUES (@razaosocial, @nom_fantasia, @fis_jur, 'F', @cod_cidade, @endereco, @numero, @complemento, @bairro, @cep, @cnpj_cpf, @ie_rg, GETDATE(), GETDATE(), @tel1, @tel2, @fax, @email, @observacao, 0)">
         <InsertParameters>
             <asp:Parameter Name="razaosocial" Type="String" />
             <asp:Parameter Name="nom_fantasia" Type="String" />

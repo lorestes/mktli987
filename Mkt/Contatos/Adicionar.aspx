@@ -9,7 +9,8 @@
     </asp:ScriptManagerProxy>
     <script type="text/javascript">
         $(function () {
-            $('#txtTel1, #txtTel2').mask('(99) 9999-9999');
+            $('#txtTel1').mask('(99) 9999-9999');
+            $('#txtTel2').mask('(99) 99999-9999');
         });
     </script>
     <h2>Cadastrar Contatos</h2>
@@ -29,14 +30,14 @@
                <div class="control-group">
                     <label class="control-label">Telefone</label>
                     <div class="controls">
-                        <asp:TextBox ID="telefoneTextBox" runat="server" Text='<%# Bind("tel1") %>' />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Telefone deve ser preenchido." ControlToValidate="telefoneTextBox"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtTel1" runat="server" Text='<%# Bind("tel1") %>' />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Telefone deve ser preenchido." ControlToValidate="txtTel1"></asp:RequiredFieldValidator>
                     </div>
                 </div>               
                <div class="control-group">
                     <label class="control-label">Celular</label>
                     <div class="controls">
-                        <asp:TextBox ID="cnpj_cpfTextBox" runat="server" Text='<%# Bind("tel2") %>' />
+                        <asp:TextBox ID="txtTel2" runat="server" Text='<%# Bind("tel2") %>' />
                     </div>
                 </div>
                <div class="control-group">
