@@ -13,6 +13,9 @@ namespace Mkt.Clientes
         {
             if (Request.QueryString["p"] == null)
                 Response.Redirect("~/Clientes");
+
+            //string cidade = ((HiddenField)frwNovoCliente.FindControl("hdnCodCidade")).Value;
+            //((DropDownList)frwNovoCliente.FindControl("cidadesDDL")).Items.FindByValue(cidade).Selected = true;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

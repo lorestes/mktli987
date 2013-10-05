@@ -30,7 +30,8 @@
         <div class="control-group">
             <asp:Label ID="Label2" runat="server" CssClass="control-label" AssociatedControlID="Email">E-mail</asp:Label>
             <div class="controls">
-                <asp:TextBox runat="server" ID="Email" TextMode="Email" />
+                <%--<asp:TextBox runat="server" ID="Email" TextMode="Email" />--%>
+                <asp:TextBox runat="server" ID="Email" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Email"
                     CssClass="field-validation-error" ErrorMessage="E-mail deve ser preenchido." />
             </div>
@@ -53,18 +54,16 @@
                     CssClass="field-validation-error"  ErrorMessage="Senha e Confirmação de Senha devem ser iguais." />
             </div>
         </div>
-               <div class="control-group">
-                    <br /><br />
-                    <div class="row-fluid">
-                        <div class="span2">
-                            <asp:LinkButton ID="InsertButton" OnClick="InsertButton_Click" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastrar" Style="margin-right: 20px;" SkinID="Cadastrar" />
-
-                        </div>
-                        <div class="span2">
-                            <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
-
-                        </div>
+            <div class="control-group">
+                <br /><br />
+                <div class="row-fluid">
+                    <div class="span2">
+                        <asp:LinkButton ID="InsertButton" OnClick="InsertButton_Click" runat="server" CausesValidation="True" CommandName="Insert" Text="Cadastrar" Style="margin-right: 20px;" SkinID="Cadastrar" />
                     </div>
-               </div>
+                <div class="span2">
+                    <asp:LinkButton ID="InsertCancelButton" OnClick="InsertCancelButton_Click" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" SkinID="Cancelar" />
+                </div>
+            </div>
+        </div>
     </div>
 </asp:Content>

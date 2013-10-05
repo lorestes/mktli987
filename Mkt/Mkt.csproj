@@ -91,6 +91,7 @@
     <Content Include="Fornecedores\Detalhes.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home\Default.aspx" />
+    <Content Include="Home\Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="App_Themes\Default\Validators.skin" />
     <None Include="Properties\PublishProfiles\joseluiz.pubxml" />
@@ -287,6 +288,13 @@
     </Compile>
     <Compile Include="Home\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>

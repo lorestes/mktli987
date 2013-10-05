@@ -2,6 +2,18 @@
 <asp:Content ID="headContent" ContentPlaceHolderID="headPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="mainContent" ContentPlaceHolderID="contentPlaceHolder" runat="server">
+    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Path="~/Scripts/jquery.mask.min.js" />
+        </Scripts>
+    </asp:ScriptManagerProxy>
+    <script type="text/javascript">
+        $(function () {
+            $('#cepTextBox').mask('99999-999');
+            $('#tel1TextBox, #faxTextBox').mask('(99) 9999-9999');
+            $('#tel2TextBox').mask('(99) 99999-9999');
+        });
+    </script>
     <h2>Detalhes de Cliente</h2>
     <p>Utilize o formulário abaixo para visualizar e editar todas as informações sobre o cliente.</p>
     <br />
@@ -10,6 +22,7 @@
             <form class="form-inline">
                 <fieldset>
                     <asp:HiddenField ID="hdnCodPessoa" Value='<%# Bind("cod_pessoa") %>' runat="server" />
+                    <asp:HiddenField ID="hdnCodCidade" Value='<%# Bind("cod_cidade") %>' runat="server" />
                     <label>Razão Social / Nome</label>
                     <asp:TextBox ID="razaosocialTextBox" runat="server" Text='<%# Bind("razaosocial") %>' />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="razaosocialTextBox" runat="server" ErrorMessage="Razão Social / Nome deve ser preenchido."></asp:RequiredFieldValidator>

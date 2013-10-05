@@ -11,7 +11,8 @@ namespace Mkt.Fornecedores
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["p"] == null)
+                Response.Redirect("~/Fornecedores");
         }
 
         protected void frwNovoFornecedor_ItemUpdated(object sender, FormViewUpdatedEventArgs e)

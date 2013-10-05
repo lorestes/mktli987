@@ -11,6 +11,7 @@
             <form class="form-inline">
                 <fieldset>
                     <asp:HiddenField ID="hdnCodCidade" Value='<%# Bind("cod_cidade") %>' runat="server" />
+                    <asp:HiddenField ID="hdnCodEstado" Value='<%# Bind("uf") %>' runat="server" />
                     <label>Nome da Cidade</label>
                     <asp:TextBox ID="nom_cidadeTextBox" runat="server" Text='<%# Bind("nom_cidade") %>' />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="nom_cidadeTextBox" runat="server" ErrorMessage="Nome da Cidade deve ser preenchido."></asp:RequiredFieldValidator>
